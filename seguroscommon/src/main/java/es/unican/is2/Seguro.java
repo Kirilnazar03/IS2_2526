@@ -116,7 +116,33 @@ public class Seguro {
 	 *         0 si el seguro todavía no está en vigor (no se ha alcanzado su fecha de inicio)
      */
 	public double precio() {
-		return 0;
+		if(fechaInicio.isAfter(LocalDate.now())){
+			return 0;
+		}
+		double precio = 0;
+		switch (cobertura) {
+			case TODO_RIESGO:
+				precio = 1000;
+				break;
+			case TERCEROS:
+				precio = 600;
+				break;
+			case TERCEROS_LUNAS:
+				precio = 400;
+				break;
+			}
+		if (potencia >= 90 && potencia <= 110) {
+			precio = precio * 1.05;
+		}
+		else if (potencia >= 110) {
+			precio = precio * 1.2;
+		}
+		if(fechaInicio.plusYears(1).isAfter(LocalDate.now())){
+			precio = precio * 0.8;
+		}
+
+		return precio;
 	}
+
 	
 }
