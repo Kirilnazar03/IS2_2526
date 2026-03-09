@@ -16,6 +16,12 @@ public class Cliente {
 
     private List<Seguro> seguros = new LinkedList<Seguro>();
     
+    public Cliente(String dni, String nombre, boolean minusvalia) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.minusvalia = minusvalia;
+    }
+
 	/**
      * Retorna los seguros del cliente 
      */
@@ -62,14 +68,14 @@ public class Cliente {
      * Indica si el cliente es minusvalido
      */
     public boolean getMinusvalia() {
-    	return minusvalia;
+        return minusvalia;
     }
 
     /**
      * Asigna la minusvalia del cliente
      * @param minusvalia
      */
-     public void setMinusvalia(boolean minusvalia) {
+    public void setMinusvalia(boolean minusvalia) {
         this.minusvalia = minusvalia;
     }
     
@@ -78,7 +84,11 @@ public class Cliente {
      * todos los seguros a su nombre
      */
     public double totalSeguros() {
-        return 0;
+        double total=0;
+        for(Seguro s: seguros){
+            total += s.precio(Cobertura.TERCEROS, s.getPotencia(), s.getFechaInicio());
+        }
+        return total;
     }
 
 }

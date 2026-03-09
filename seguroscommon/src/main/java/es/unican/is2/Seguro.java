@@ -1,6 +1,8 @@
 package es.unican.is2;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 
 /**
  * Clase que representa un seguro de coche.
@@ -115,7 +117,14 @@ public class Seguro {
 	 * @return El precio del seguro
 	 *         0 si el seguro todavía no está en vigor (no se ha alcanzado su fecha de inicio)
      */
-	public double precio() {
+	public double precio(Cobertura cobertura, int potencia, LocalDate fechaInicio) {
+		double precioBase = cobertura
+		if (LocalDateTime.now().toLocalDate().isBefore(fechaInicio)) {
+			return 0;
+		}
+
+		if(cobertura.eq)
+		
 		return 0;
 	}
 	
