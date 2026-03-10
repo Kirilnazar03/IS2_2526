@@ -84,9 +84,18 @@ public class Cliente {
      * todos los seguros a su nombre
      */
     public double totalSeguros() {
+<<<<<<< HEAD
         double total=0;
         for(Seguro s: seguros){
             total += s.precio(Cobertura.TERCEROS, s.getPotencia(), s.getFechaInicio());
+=======
+        double total = 0;
+        for(Seguro s: seguros) {
+            total += s.precio();
+        }
+        if(minusvalia) {
+            total = total * 0.75;
+>>>>>>> c25143f7018d1a3d8db45f969c1936c87983326d
         }
         return total;
     }
