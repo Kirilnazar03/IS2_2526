@@ -117,17 +117,6 @@ public class Seguro {
 	 * @return El precio del seguro
 	 *         0 si el seguro todavía no está en vigor (no se ha alcanzado su fecha de inicio)
      */
-<<<<<<< HEAD
-	public double precio(Cobertura cobertura, int potencia, LocalDate fechaInicio) {
-		double precioBase = cobertura
-		if (LocalDateTime.now().toLocalDate().isBefore(fechaInicio)) {
-			return 0;
-		}
-
-		if(cobertura.eq)
-		
-		return 0;
-=======
 	public double precio() {
 		if(fechaInicio.isAfter(LocalDate.now())){
 			return 0;
@@ -155,7 +144,6 @@ public class Seguro {
 		}
 
 		return precio;
->>>>>>> c25143f7018d1a3d8db45f969c1936c87983326d
 	}
 
 	

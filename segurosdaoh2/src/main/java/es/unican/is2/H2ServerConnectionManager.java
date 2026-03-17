@@ -46,7 +46,7 @@ public class H2ServerConnectionManager {
 	 */
 	public static void cargaDatos() throws DataAccessException {
 		try {
-			Connection con = getConnection();
+			Connection con = connection;
 			
 			// Creacion programatica de la BBDD
 			Statement stm = con.createStatement(); 

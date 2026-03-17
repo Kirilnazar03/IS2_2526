@@ -11,6 +11,9 @@ import java.util.List;
 
 public class ClientesDAO implements IClientesDAO {
 
+   
+
+
 	@Override
 	public Cliente creaCliente(Cliente c) throws DataAccessException {
 		String insertStatement = String.format(
@@ -40,7 +43,10 @@ public class ClientesDAO implements IClientesDAO {
 			throw new DataAccessException();
 		}
 		return result;
-	}
+    }
+
+
+
 
 	@Override
 	public Cliente actualizaCliente(Cliente nuevo) throws DataAccessException {
