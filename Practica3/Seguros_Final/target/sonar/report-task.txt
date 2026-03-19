@@ -1,0 +1,6 @@
+projectKey=es.unican.is2:Seguros_Final
+serverUrl=http://localhost:9000
+serverVersion=26.3.0.120487
+dashboardUrl=http://localhost:9000/dashboard?id=es.unican.is2%3ASeguros_Final
+ceTaskId=67a125ad-8926-470a-8620-eda7ef1f94a3
+ceTaskUrl=http://localhost:9000/api/ce/task?id=67a125ad-8926-470a-8620-eda7ef1f94a3
