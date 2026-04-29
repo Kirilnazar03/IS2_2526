@@ -1,0 +1,51 @@
+# Created at 2026-04-28T19:20:32.848
+org.apache.maven.surefire.api.testset.TestSetFailedException: Unable to instantiate POJO 'class es.unican.is2.segurosgui.VistaAgenteTest'.
+	at org.apache.maven.surefire.junit.PojoTestSetExecutor.executeTestMethod(PojoTestSetExecutor.java:77)
+	at org.apache.maven.surefire.junit.PojoTestSetExecutor.execute(PojoTestSetExecutor.java:63)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:93)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:74)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.apache.maven.surefire.junit.PojoTestSetExecutor.executeTestMethod(PojoTestSetExecutor.java:75)
+	... 7 more
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The import org.assertj cannot be resolved
+	The import org.assertj cannot be resolved
+	The import org.assertj cannot be resolved
+	The import org.junit cannot be resolved
+	The import org.junit cannot be resolved
+	The import org.junit cannot be resolved
+	The import org.junit cannot be resolved
+	FrameFixture cannot be resolved to a type
+	BeforeClass cannot be resolved to a type
+	FailOnThreadViolationRepaintManager cannot be resolved
+	Before cannot be resolved to a type
+	GuiActionRunner cannot be resolved
+	FrameFixture cannot be resolved to a type
+	FrameFixture cannot be resolved to a type
+	FrameFixture cannot be resolved to a type
+	After cannot be resolved to a type
+	FrameFixture cannot be resolved to a type
+	Test cannot be resolved to a type
+	FrameFixture cannot be resolved to a type
+	FrameFixture cannot be resolved to a type
+	FrameFixture cannot be resolved to a type
+	FrameFixture cannot be resolved to a type
+	Test cannot be resolved to a type
+	FrameFixture cannot be resolved to a type
+	FrameFixture cannot be resolved to a type
+	FrameFixture cannot be resolved to a type
+	FrameFixture cannot be resolved to a type
+	FrameFixture cannot be resolved to a type
+
+	at es.unican.is2.segurosgui.VistaAgenteTest.<init>(VistaAgenteTest.java:3)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	... 10 more
+
+

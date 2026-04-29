@@ -1,0 +1,11 @@
+es\unican\is2\seguroscommon\OperacionNoValida.class
+es\unican\is2\seguroscommon\Seguro.class
+es\unican\is2\seguroscommon\ISegurosDAO.class
+es\unican\is2\seguroscommon\IInfoSeguros.class
+es\unican\is2\seguroscommon\Cobertura.class
+es\unican\is2\seguroscommon\DataAccessException.class
+es\unican\is2\seguroscommon\Seguro$1.class
+es\unican\is2\seguroscommon\IGestionSeguros.class
+es\unican\is2\seguroscommon\IClientesDAO.class
+es\unican\is2\seguroscommon\IGestionClientes.class
+es\unican\is2\seguroscommon\Cliente.class

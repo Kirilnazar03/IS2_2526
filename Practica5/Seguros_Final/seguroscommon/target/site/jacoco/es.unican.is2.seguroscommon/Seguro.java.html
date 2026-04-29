@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Seguro.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">seguroscommon</a> &gt; <a href="index.source.html" class="el_package">es.unican.is2.seguroscommon</a> &gt; <span class="el_source">Seguro.java</span></div><h1>Seguro.java</h1><pre class="source lang-java linenums">package es.unican.is2.seguroscommon;
+
+import java.time.LocalDate;
+
+/**
+ * Clase que representa un seguro de coche.
+ */
+<span class="fc" id="L8">public class Seguro {</span>
+	
+	private long id;
+
+    private String matricula;
+
+	private int potencia;
+
+    private Cobertura cobertura;
+    
+    private LocalDate fechaInicio;
+
+	private String conductorAdicional;
+
+	/**
+	 * Retorna el identificador del seguro
+	 */
+	public long getId() {
+<span class="nc" id="L26">		return id;</span>
+	}
+
+	/**
+	 *  Asigna el valor del identificador del seguro
+	 */
+	public void setId(long id) {
+<span class="nc" id="L33">		this.id = id;</span>
+<span class="nc" id="L34">	}</span>
+
+	/**
+	 * Retorna la matricula del coche 
+	 * asociado al seguro
+	 */
+	public String getMatricula() {
+<span class="nc" id="L41">		return matricula;</span>
+	}
+
+	/**
+	 *  Asigna el valor de la matrícula del seguro
+	 */
+	public void setMatricula(String matricula) {
+<span class="fc" id="L48">		this.matricula = matricula;</span>
+<span class="fc" id="L49">	}</span>
+	/**
+	 * Retorna la fecha de contratacion del seguro
+	 */
+	public LocalDate getFechaInicio() {
+<span class="nc" id="L54">		return fechaInicio;</span>
+	}
+
+	/**
+	 * Asigna la fecha de inicio del seguro
+	 * @param fechaInicio La fecha de inicio del seguro
+	 */
+	public void setFechaInicio(LocalDate fechaInicio) {
+<span class="fc" id="L62">		this.fechaInicio = fechaInicio;</span>
+<span class="fc" id="L63">	}</span>
+
+	/**
+	 * Retorna el tipo de cobertura del seguro
+	 */
+	public Cobertura getCobertura() {
+<span class="nc" id="L69">		return cobertura;</span>
+	}
+
+	/**
+	 * Asigna el tipo de cobertura del seguro
+	 * @param cobertura El tipo de cobertura del seguro
+	 */	
+	public void setCobertura(Cobertura cobertura) {
+<span class="fc" id="L77">		this.cobertura = cobertura;		</span>
+<span class="fc" id="L78">}</span>
+
+	/**
+     * Retorna la potencia del coche asociado 
+     * al seguro. 
+     */
+    public int getPotencia() {
+<span class="nc" id="L85">        return potencia;</span>
+    }
+
+	/**
+	 *  Asigna el valor del identificador del seguro
+	 */
+	public void setPotencia(int potencia) {
+<span class="fc" id="L92">		this.potencia = potencia;</span>
+<span class="fc" id="L93">	}</span>
+
+	/**
+	 * Retorna el conductor adicional del seguro, si lo hay
+	 * @return El conductor adicional si lo hay
+	 * 		null en caso contrario
+	 */
+	public String getConductorAdicional() {
+<span class="nc" id="L101">		return conductorAdicional;</span>
+	}
+
+	/**
+	 * Asigna el conductor adicional del seguro
+	 * @param conductorAdicional
+	 */
+	public void setConductorAdicional(String conductorAdicional) {
+<span class="fc" id="L109">		this.conductorAdicional = conductorAdicional;</span>
+<span class="fc" id="L110">	}</span>
+    
+    /**
+     * Retorna el precio del seguro. 
+	 * El precio se calcula a partir de la cobertura, la potencia del coche y el tiempo que lleva contratado el seguro
+	 * @return El precio del seguro
+	 *         0 si el seguro todavía no está en vigor (no se ha alcanzado su fecha de inicio)
+     */
+	public double precio() {
+<span class="fc bfc" id="L119" title="All 2 branches covered.">		if(fechaInicio.isAfter(LocalDate.now())){</span>
+<span class="fc" id="L120">			return 0;</span>
+		}
+<span class="fc" id="L122">		double precio = 0;</span>
+<span class="pc bpc" id="L123" title="1 of 4 branches missed.">		switch (cobertura) {</span>
+			case TODO_RIESGO:
+<span class="fc" id="L125">				precio = 1000;</span>
+<span class="fc" id="L126">				break;</span>
+			case TERCEROS:
+<span class="fc" id="L128">				precio = 600;</span>
+<span class="fc" id="L129">				break;</span>
+			case TERCEROS_LUNAS:
+<span class="fc" id="L131">				precio = 400;</span>
+<span class="fc" id="L132">				break;</span>
+			default:
+				break;
+			}
+<span class="fc bfc" id="L136" title="All 4 branches covered.">		if (potencia &gt;= 90 &amp;&amp; potencia &lt;= 110) {</span>
+<span class="fc" id="L137">			precio = precio * 1.05;</span>
+<span class="fc" id="L138">		}</span>
+<span class="fc bfc" id="L139" title="All 2 branches covered.">		else if (potencia &gt;= 110) {</span>
+<span class="fc" id="L140">			precio = precio * 1.2;</span>
+		}
+<span class="fc bfc" id="L142" title="All 2 branches covered.">		if(fechaInicio.plusYears(1).isAfter(LocalDate.now())){</span>
+<span class="fc" id="L143">			precio = precio * 0.8;</span>
+		}
+
+<span class="fc" id="L146">		return precio;</span>
+	}
+
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

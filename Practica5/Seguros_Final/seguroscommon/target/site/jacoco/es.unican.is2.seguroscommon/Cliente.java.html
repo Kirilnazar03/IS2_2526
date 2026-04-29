@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Cliente.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">seguroscommon</a> &gt; <a href="index.source.html" class="el_package">es.unican.is2.seguroscommon</a> &gt; <span class="el_source">Cliente.java</span></div><h1>Cliente.java</h1><pre class="source lang-java linenums">package es.unican.is2.seguroscommon;
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ * Clase que representa un cliente de la empresa de seguros
+ * Un cliente se identifica por su dni
+ */
+<span class="fc" id="L9">public class Cliente {</span>
+
+    private String dni;
+
+    private String nombre;  
+    
+    private boolean minusvalia;
+
+<span class="fc" id="L17">    private List&lt;Seguro&gt; seguros = new LinkedList&lt;Seguro&gt;();</span>
+    
+	/**
+     * Retorna los seguros del cliente 
+     */
+    public List&lt;Seguro&gt; getSeguros() {
+<span class="fc" id="L23">        return seguros;</span>
+    }
+    
+    /**
+     * Asigna la lista de seguros
+     */
+    public void setSeguros(List&lt;Seguro&gt; seguros) {
+<span class="nc" id="L30">        this.seguros = seguros;</span>
+<span class="nc" id="L31">    }</span>
+
+    /**
+     * Retorna el nombre del cliente.   
+     */
+    public String getNombre() {
+<span class="nc" id="L37">        return nombre;</span>
+    }
+
+    /**
+     * Asigna el nombre del cliente
+     */
+    public void setNombre(String nombre) {
+<span class="fc" id="L44">        this.nombre = nombre;</span>
+<span class="fc" id="L45">    }</span>
+    /**
+     * Retorna el dni del cliente.
+     */
+    public String getDni() {
+<span class="nc" id="L50">        return dni;</span>
+    }
+
+    /**
+     * Asigna el dni del cliente
+     * @param dni
+     */
+    public void setDni(String dni) {
+<span class="fc" id="L58">        this.dni = dni;</span>
+<span class="fc" id="L59">    }</span>
+    
+    /**
+     * Indica si el cliente es minusvalido
+     */
+    public boolean getMinusvalia() {
+<span class="nc" id="L65">    	return minusvalia;</span>
+    }
+
+    /**
+     * Asigna la minusvalia del cliente
+     * @param minusvalia
+     */
+     public void setMinusvalia(boolean minusvalia) {
+<span class="fc" id="L73">        this.minusvalia = minusvalia;</span>
+<span class="fc" id="L74">    }</span>
+    
+    /**
+     * Calcula el total a pagar por el cliente por 
+     * todos los seguros a su nombre
+     */
+    public double totalSeguros() {
+<span class="fc" id="L81">        double total = 0;</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">        for(Seguro s: seguros) {</span>
+<span class="fc" id="L83">            total += s.precio();</span>
+        }
+<span class="fc bfc" id="L85" title="All 2 branches covered.">        if(minusvalia) {</span>
+<span class="fc" id="L86">            total = total * 0.75;</span>
+        }
+<span class="fc" id="L88">        return total;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

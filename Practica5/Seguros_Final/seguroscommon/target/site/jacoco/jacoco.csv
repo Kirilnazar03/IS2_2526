@@ -1,0 +1,6 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+seguroscommon,es.unican.is2.seguroscommon,DataAccessException,3,0,0,0,1,0,1,0,1,0
+seguroscommon,es.unican.is2.seguroscommon,Cobertura,0,34,0,0,0,2,0,1,0,1
+seguroscommon,es.unican.is2.seguroscommon,Cliente,13,51,0,4,5,15,4,8,4,6
+seguroscommon,es.unican.is2.seguroscommon,OperacionNoValida,4,0,0,0,2,0,1,0,1,0
+seguroscommon,es.unican.is2.seguroscommon,Seguro,22,81,1,13,8,29,8,14,7,7
