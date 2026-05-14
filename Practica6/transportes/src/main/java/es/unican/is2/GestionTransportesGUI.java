@@ -6,13 +6,24 @@ import fundamentos.*;
 
 /**
  * Gestion de una empresa de transportes
+ *
+ * Metricas iniciales:
+ * WMC = main 17 (1 + while + 4 case exteriores + ifs + switch interno de 3 case + bucles de busqueda de mejor conductor) + mensaje 1 = 18; 
+ * WMCn = 18 / 2 = 9.00.
+ * CCog = main 24 (while, switch exterior, decisiones anidadas en cada case, switch interno 
+ * y bucles de construccion del resultado) + mensaje 0 = 24;
+ * CCogn = 24 / 2 = 12.00.
+ * CBO = 9: LinkedList, List, fundamentos.Lectura, fundamentos.Menu, fundamentos.Mensaje,
+ * gestionTransportes, Conductor, Transporte, CategoriaTransporte.
+ * DIT = 1. 
+ * NOC = 0.
  */
 public class GestionTransportesGUI {
 
 	/**
 	 * Programa principal basado en menu
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) { // Complejidad ciclomatica = 17 (1 + while + 4 case exteriores + ifs + switch interno de 3 case)
 		// opciones del menu
 		final int ANHADE_CONDUCTOR = 0, ANHADE_TRANSPORTE = 1, 
 		SUELDO_CONDUCTOR = 2, MEJOR_CONDUCTOR = 3;
@@ -137,7 +148,7 @@ public class GestionTransportesGUI {
 	 * @param titulo titulo de la ventana
 	 * @param txt texto contenido en la ventana
 	 */
-	private static void mensaje(String titulo, String txt) {
+	private static void mensaje(String titulo, String txt) { // Complejidad ciclomatica = 1
 		Mensaje msj = new Mensaje(titulo);
 		msj.escribe(txt);
 
